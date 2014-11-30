@@ -12,7 +12,7 @@ RUN rpm -Uvh http://mirror.centos.org/centos/7/os/x86_64/Packages/libedit-3.0-12
 #RUN rpm -Uvh http://mirror.centos.org/centos/7/os/x86_64/Packages/passwd-0.79-4.el7.x86_64.rpm
 
 RUN yum install -y openssh openssh-server openssh-clients
-RUN yum install initscripts
+RUN yum install -y initscripts
 
 RUN ssh-keygen -t rsa -q -N "" < /dev/zero > /dev/null 2>&1
 

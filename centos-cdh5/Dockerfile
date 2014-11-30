@@ -12,20 +12,20 @@ RUN curl http://archive.cloudera.com/gplextras5/redhat/6/x86_64/gplextras/cloude
 #RUN yum update
 
 # Hadoop core packages
-RUN yum -y install hadoop-yarn-resourcemanager hadoop-hdfs-namenode hadoop-hdfs-secondarynamenode \
+RUN yum install -y hadoop-yarn-resourcemanager hadoop-hdfs-namenode hadoop-hdfs-secondarynamenode \
     hadoop-yarn-nodemanager hadoop-hdfs-datanode hadoop-mapreduce \    
     hadoop-mapreduce-historyserver hadoop-yarn-proxyserver hadoop-client
 
 # Install Hadoop pseudo distributed mode configurations
-RUN yum -y install hadoop-conf-pseudo
+RUN yum install -y hadoop-conf-pseudo
 
 # Install LZO from GPL Extras
-RUN	yum install hadoop-lzo
+RUN	yum install -y hadoop-lzo
 
 # Hadoop ecosystem packages
 #
 # Zookeeper
-RUN yum install zookeeper zookeeper-server
+RUN yum install -y zookeeper zookeeper-server
 
 RUN mkdir -p /var/lib/zookeeper
 RUN chown -R zookeeper /var/lib/zookeeper/
@@ -34,22 +34,22 @@ RUN service zookeeper-server init
 RUN service zookeeper-server start
  
 # HBase
-RUN yum install hbase
+RUN yum install -y hbase
 
 # Hive
-RUN yum install hive
+RUN yum install -y hive
 
 # Oozie
-RUN yum install oozie oozie-client
+RUN yum install -y oozie oozie-client
 
 # Pig
-RUN yum install pig pig-udf-datafu
+RUN yum install -y pig pig-udf-datafu
 
 # Spark
-RUN yum install spark-core spark-master spark-worker spark-history-server spark-python
+RUN yum install -y spark-core spark-master spark-worker spark-history-server spark-python
 
 # Hue
-RUN yum install hue hue-plugins
+RUN yum install -y hue hue-plugins
 
 # Format namenode
 RUN hdfs namenode -format
