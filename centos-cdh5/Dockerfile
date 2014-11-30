@@ -50,3 +50,6 @@ RUN yum install spark-core spark-master spark-worker spark-history-server spark-
 
 # Hue
 RUN yum install hue hue-plugins
+
+# Format namenode
+RUN hdfs namenode -format
