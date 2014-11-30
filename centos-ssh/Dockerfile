@@ -1,5 +1,5 @@
 # CDH5 
-FROM aczire:oraclejdk7u71
+FROM centos7-jdk7
 MAINTAINER Jimson K James "mail.jimson@aczire.com"
 ENV REFRESHED_AT 2014-12-01
 
