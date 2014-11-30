@@ -23,3 +23,4 @@ RUN mkdir -p /var/run/sshd
 RUN chmod -rx /var/run/sshd
 RUN ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key -q -N "" < /dev/zero > /dev/null 2>&1
 RUN sed -ri 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
+RUN service sshd restart
