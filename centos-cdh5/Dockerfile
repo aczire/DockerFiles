@@ -1,5 +1,5 @@
 # CDH5 
-FROM aczire:centos7-ssh
+FROM aczire/centos7-ssh
 MAINTAINER Jimson K James "mail.jimson@aczire.com"
 ENV REFRESHED_AT 2014-12-01
 
